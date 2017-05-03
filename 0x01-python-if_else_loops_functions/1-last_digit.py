@@ -9,5 +9,5 @@ if lastn > 5:
     print('Last digit of', number, 'is', lastn, 'and is greater than 5')
 elif lastn == 0:
     print('Last digit of', number, 'is', lastn, 'and is 0')
-elif lastn < 6 and lastn != 0:
+else:
     print('Last digit of', number, 'is', lastn, 'and is less than 6 and not 0')
