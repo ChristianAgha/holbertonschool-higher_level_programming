@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+for a in range(0, 9):
+    for b in range(1, 10):
+        if a != b and a < b and a != 8:
+            print("{:d}{:d}, ".format(a, b), end="")
+        elif a != b and a < b and a == 8:
+            print("{:d}{:d}\n".format(a, b), end="")
