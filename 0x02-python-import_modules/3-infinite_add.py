@@ -6,3 +6,7 @@ if __name__ == "__main__":
         for n in range(2, len(sys.argv)):
             add_res += int(sys.argv[n])
         print(add_res)
+    elif len(sys.argv) == 2:
+        print(sys.argv[1])
+    else:
+        print("0")
