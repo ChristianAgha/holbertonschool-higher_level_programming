@@ -2,9 +2,9 @@
 def new_in_list(my_list, idx, element):
     if my_list is None:
         return
-    new_list = list(my_list)
-    if idx >= len(my_list):
-        return my_list
+    new_list = my_list[:]
+    if abs(idx) >= len(my_list):
+        return new_list
     else:
         new_list[idx] = element
         return new_list
