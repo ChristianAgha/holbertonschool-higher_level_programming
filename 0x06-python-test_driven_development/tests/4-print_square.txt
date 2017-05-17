@@ -57,7 +57,7 @@ TypeError: size must be an integer
 # print_square None
 >>> print_square(None)
 Traceback (most recent call last):
-TypeError: unorderable types: NoneType() < int()
+TypeError: size must be an integer
 
 # print_square empty args
 >>> print_square()
@@ -72,4 +72,4 @@ TypeError: print_square() takes 1 positional argument but 2 were given
 # print_square 'string'
 >>> print_square('string')
 Traceback (most recent call last):
-TypeError: unorderable types: str() < int()
+TypeError: size must be an integer
