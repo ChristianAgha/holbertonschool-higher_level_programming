@@ -11,7 +11,6 @@ class Square:
             else:
                 raise ValueError("size must be >= 0")
         else:
-            print("this is not an int!!!!!!!!!")
             raise TypeError("size must be an integer")
 
     # This is the getter
