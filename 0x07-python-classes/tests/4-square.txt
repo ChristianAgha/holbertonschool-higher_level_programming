@@ -25,6 +25,11 @@ Expected Successes:
 >>> my_square.area()
 0
 
+# size is boolean
+>>> my_square = Square(True)
+>>> my_square.area()
+1
+
 Expected Failures:
 ==================
 
@@ -38,7 +43,7 @@ TypeError: size must be an integer
 Traceback (most recent call last):
 ValueError: size must be >= 0
 
-# size is boolean
->>> my_square = Square(True)
->>> my_square.area()
-1
+# size is None
+>>> my_square = Square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
