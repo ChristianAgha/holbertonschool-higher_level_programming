@@ -48,5 +48,6 @@ class Rectangle:
 
     def __str__(self):
         """prints the rectangle with the character #"""
-        hash_rectangle = "{}".format('\n'.join("#" * self.__width for i in range(0, self.__height)))
+        hash_rectangle = "{}".format('\n'.join("#" * self.__width for i in
+                                               range(0, self.__height)))
         return hash_rectangle
