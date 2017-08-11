@@ -7,23 +7,25 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    city_list = []
-    db = MySQLdb.Connect(host="localhost", port=3306, user=argv[1],
-                         passwd=argv[2], db=argv[3])
+    if len(argv) == 5:
 
-    cur = db.cursor()
-    cur.execute("""
-    SELECT cities.id, cities.name, states.name
-    FROM cities
-    JOIN states ON cities.state_id=states.id
-    ORDER BY cities.id ASC""")
+        city_list = []
+        db = MySQLdb.Connect(host="localhost", port=3306, user=argv[1],
+                             passwd=argv[2], db=argv[3])
 
-    cities = cur.fetchall()
-    for city in cities:
-        if city[2] == argv[4]:
-            city_list.append(city[1])
+        cur = db.cursor()
+        cur.execute("""
+        SELECT cities.id, cities.name, states.name
+        FROM cities
+        JOIN states ON cities.state_id=states.id
+        ORDER BY cities.id ASC""")
 
-    print(", ".join(city_list))
+        cities = cur.fetchall()
+        for city in cities:
+            if city[2] == argv[4].split("'")[0]:
+                city_list.append(city[1])
 
-    cur.close()
-    db.close()
+        print(", ".join(city_list))
+
+        cur.close()
+        db.close()
