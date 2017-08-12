@@ -27,7 +27,7 @@ if __name__ == "__main__":
     found = session.query(State).filter_by(name=passed_state).first()
 
     if found is not None:
-        print(found.id)
+        print("{}".format(found.id))
     else:
         print("Not Found")
 
