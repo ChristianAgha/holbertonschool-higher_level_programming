@@ -14,7 +14,6 @@ if __name__ == "__main__":
     port = 3306
     user, passwd, database = argv[1], argv[2], argv[3]
     passed_state = argv[4].split("'")[0]
-    not_found = 1
 
     engine = create_engine('mysql+mysqldb://{}:{}@{}:{}/{}'.format(user,
                                                                    passwd,
@@ -25,13 +24,11 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-    states = session.query(State).order_by(State.id).all()
+    found = session.query(State).filter_by(name=passed_state).first()
 
-    for state in states:
-        if state.name == passed_state:
-            print("{}".format(state.id))
-            not_found = 0
-    if (not_found):
-        print("Not found")
+    if found:
+        print(found.id)
+    else:
+        print("Not Found")
 
     session.close()
