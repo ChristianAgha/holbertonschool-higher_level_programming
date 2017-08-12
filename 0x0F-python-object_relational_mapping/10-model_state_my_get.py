@@ -29,6 +29,6 @@ if __name__ == "__main__":
     if found is not None:
         print("{}".format(found.id))
     else:
-        print("Not Found")
+        print("Not found")
 
     session.close()
