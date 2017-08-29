@@ -11,5 +11,6 @@ if __name__ == "__main__":
     """
     func definition
     """
-    req = requests.get(sys.argv[1])
-    print(req.headers["X-Request-Id"])
+    if len(sys.argv) > 1:
+        req = requests.get(sys.argv[1])
+        print(req.headers["X-Request-Id"])
