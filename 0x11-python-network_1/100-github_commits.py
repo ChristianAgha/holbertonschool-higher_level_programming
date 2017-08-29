@@ -13,6 +13,9 @@ if __name__ == "__main__":
     """
     u = "https://api.github.com/repos/" + argv[2] + "/" + argv[1] + "/commits"
     r = requests.get(u).json()
+    if type(r) is dict:
+        if r.get("message") == "Not Found":
+            r = None
     com_lst = []
     if (r):
         for item in r:
