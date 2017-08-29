@@ -22,5 +22,9 @@ if __name__ == "__main__":
             sha = item["sha"]
             name = item["commit"]["author"]["name"]
             com_lst.append([sha, name])
-        for n in range(10):
-            print("{}: {}".format(com_lst[n][0], com_lst[n][1]))
+        if len(com_lst) >= 10:
+            for n in range(10):
+                print("{}: {}".format(com_lst[n][0], com_lst[n][1]))
+        else:
+            for n in range(len(com_lst)):
+                print("{}: {}".format(com_lst[n][0], com_lst[n][1]))
