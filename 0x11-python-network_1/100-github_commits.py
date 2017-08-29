@@ -19,9 +19,8 @@ if __name__ == "__main__":
         for item in res:
             sha = item["sha"]
             name = item["commit"]["author"]["name"]
-            date = item["commit"]["author"]["date"]
-            com_lst.append([date, sha, name])
+            com_lst.append([sha, name])
         for n in range(10):
-            print("{}: {}".format(com_lst[n][1], com_lst[n][2]))
+            print("{}: {}".format(com_lst[n][0], com_lst[n][1]))
     except:
         print("None")
