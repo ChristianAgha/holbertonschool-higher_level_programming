@@ -1,6 +1,6 @@
 #!/usr/bin/node
 // Defines a rectangle class
-exports.Rectangle = function Rectangle (w, h) {
+function Rectangle (w, h) {
   if (w > 0 && h > 0) {
     this.width = w;
     this.height = h;
@@ -22,4 +22,6 @@ exports.Rectangle = function Rectangle (w, h) {
     this.width = this.width * 2;
     this.height = this.height * 2;
   };
-};
+}
+
+module.exports.Rectangle = Rectangle;
