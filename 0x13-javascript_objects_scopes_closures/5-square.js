@@ -7,4 +7,4 @@ function Square (size) {
   Rectangle.call(this, size, size);
 }
 
-exports.Square = Square;
+module.exports.Square = Square;
