@@ -3,22 +3,21 @@
 
 const apiUrl = process.argv[2];
 const request = require('request');
-let count = 0;
 
 request(apiUrl, function (err, response, body) {
   if (err) {
     console.log(err);
   } else {
+    let count = 0;
     const jBody = JSON.parse(body);
     for (let i = 0; i < jBody.results.length; i++) {
       for (let j = 0; j < jBody.results[i].characters.length; j++) {
         let character = jBody.results[i].characters[j];
-        let wedgeAntilles = 'https://swapi.co/api/people/18/';
-        if (character === wedgeAntilles) {
+        if (character.match('18')) {
           count++;
         }
       }
     }
+    console.log(count);
   }
-  console.log(count);
 });
